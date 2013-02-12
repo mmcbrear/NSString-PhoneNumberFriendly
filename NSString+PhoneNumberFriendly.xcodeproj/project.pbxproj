@@ -23,6 +23,8 @@
 		4AB7CB9816CA628C00D745C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB7CB7316CA628B00D745C7 /* Foundation.framework */; };
 		4AB7CBA016CA628C00D745C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AB7CB9E16CA628C00D745C7 /* InfoPlist.strings */; };
 		4AB7CBA316CA628C00D745C7 /* NSString_PhoneNumberFriendlyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7CBA216CA628C00D745C7 /* NSString_PhoneNumberFriendlyTests.m */; };
+		4AB7CBAE16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7CBAD16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.m */; };
+		4AB7CBAF16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7CBAD16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		4AB7CB9F16CA628C00D745C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AB7CBA116CA628C00D745C7 /* NSString_PhoneNumberFriendlyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSString_PhoneNumberFriendlyTests.h; sourceTree = "<group>"; };
 		4AB7CBA216CA628C00D745C7 /* NSString_PhoneNumberFriendlyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSString_PhoneNumberFriendlyTests.m; sourceTree = "<group>"; };
+		4AB7CBAC16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PhoneNumberFriendly.h"; sourceTree = "<group>"; };
+		4AB7CBAD16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PhoneNumberFriendly.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				4AB7CB8C16CA628B00D745C7 /* ViewController.h */,
 				4AB7CB8D16CA628B00D745C7 /* ViewController.m */,
 				4AB7CB7816CA628B00D745C7 /* Supporting Files */,
+				4AB7CBAC16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.h */,
+				4AB7CBAD16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.m */,
 			);
 			path = "NSString+PhoneNumberFriendly";
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 				4AB7CB7E16CA628B00D745C7 /* main.m in Sources */,
 				4AB7CB8216CA628B00D745C7 /* AppDelegate.m in Sources */,
 				4AB7CB8E16CA628B00D745C7 /* ViewController.m in Sources */,
+				4AB7CBAE16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB7CBA316CA628C00D745C7 /* NSString_PhoneNumberFriendlyTests.m in Sources */,
+				4AB7CBAF16CA62DA00D745C7 /* NSString+PhoneNumberFriendly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,10 +400,14 @@
 		4AB7CBA816CA628C00D745C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NSString+PhoneNumberFriendly/NSString+PhoneNumberFriendly-Prefix.pch";
 				INFOPLIST_FILE = "NSString+PhoneNumberFriendly/NSString+PhoneNumberFriendly-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NSString+PhoneNumberFriendly.h"
 
 @interface ViewController ()
 
@@ -17,13 +18,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *number1 = @"+44 07777-777-7777";
+    NSString *number2 = @"+44 07777 777777 HOME";
+    NSString *number3 = @"+00 44 07777 777 7777 HOME, work !@£$%^&*(){}[]\"/\\:;?.><~|'`";
+    
+    self.button1.titleLabel.font = [UIFont systemFontOfSize:9];
+    self.button2.titleLabel.font = [UIFont systemFontOfSize:9];
+    self.button3.titleLabel.font = [UIFont systemFontOfSize:9];
+    
+    [self.button1 setTitle:number1 forState:UIControlStateNormal];
+    [self.button2 setTitle:number2 forState:UIControlStateNormal];
+    [self.button3 setTitle:number3 forState:UIControlStateNormal];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)onButtonTouch:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UIButton *btn = (UIButton*)sender;
+    NSString *phoneNumber = [@"tel://" stringByAppendingString:[btn.titleLabel.text phoneAppFriendlyNumber]];
+    
+    NSLog(@"phoneNumber: %@",phoneNumber);
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 }
 
 @end
